@@ -8,7 +8,7 @@ using System.Web;
 /// Interface holding common methods inside the 
 /// classes that implement it
 /// </summary>
-public interface IEntitiy<T>
+public interface IEntity<T>
 {
     public void Add(T item);
     public void Get(ref List<T> item);
