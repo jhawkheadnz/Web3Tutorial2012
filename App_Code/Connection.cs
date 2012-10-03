@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 class Connection
 {
     private SqlConnection sqlConnection;
+    private SqlCommand sqlCommand;
     
     private string username;
     private string password;
@@ -19,7 +20,7 @@ class Connection
 
     private string sql;
 
-    private static string ConnectionStringFormat = "";
+    private const string connectionStringFormat = "Data Source={0};Initial Catalog={1};User ID={2};Password={3};MultipleActiveResultSets=True";
 
     /// <summary>
     /// Constructor with details about connection
@@ -45,6 +46,25 @@ class Connection
     /// </summary>
     public void Connect()
     {
+        string connectionString = String.Format(connectionStringFormat, this.server, this.database, this.username, this.password);
+        this.sqlConnection = new SqlConnection(connectionString);
+    }
 
+    /// <summary>
+    /// Prepare the statement for execution
+    /// </summary>
+    /// <param name="sql">SQL Command to execute</param>
+    public void Prepare(string sql)
+    {
+        this.sqlCommand.Connection = sqlConnection;
+        this.sqlCommand.CommandText = sql;
+    }
+
+    /// <summary>
+    /// Close connection
+    /// </summary>
+    public void Close()
+    {
+        this.sqlConnection.Close();
     }
 }
