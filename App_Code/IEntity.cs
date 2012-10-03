@@ -5,7 +5,9 @@ using System.Web;
 
 /// <summary>
 /// Interface holding common methods inside the 
-/// classes that implement it
+/// classes that implement it.
+/// 
+/// A generic "type"...
 /// </summary>
 public interface IEntity<T>
 {
