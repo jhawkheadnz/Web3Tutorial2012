@@ -1,0 +1,4 @@
+GitHub tutorial links:
+
+http://learn.github.com/p/intro.html
+http://sixrevisions.com/resources/git-tutorials-beginners/
