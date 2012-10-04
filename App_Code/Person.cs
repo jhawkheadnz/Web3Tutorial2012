@@ -31,9 +31,13 @@ public class Person : IEntity<PersonInfo>
     /// <param name="item">PersonInfo object with details</param>
     public void Add(PersonInfo item)
     {
-        this.sqlCommand.CommandText = "INSERT INTO tblPerson (FirstName, LastName) VALUES ('@firstName', '@lastName');";
-        this.sqlCommand.Parameters.AddWithValue("firstName", item.FirstName);
-        this.sqlCommand.Parameters.AddWithValue("lastName", item.LastName);
+        this.sqlConnection.Open();
+        this.sqlCommand.CommandText = "INSERT INTO tblPerson (FirstName, LastName) VALUES (@firstName, @lastName);";
+        this.sqlCommand.Parameters.AddWithValue("@firstName", item.FirstName);
+        this.sqlCommand.Parameters.AddWithValue("@lastName", item.LastName);
+
+        this.sqlCommand.ExecuteNonQuery();
+        this.sqlConnection.Close();
     }
 
     public void Get(ref List<PersonInfo> item)
@@ -64,21 +68,41 @@ public class Person : IEntity<PersonInfo>
             item.Add(personDataTemp);
         }
 
+        sqlConnection.Close();
     }
 
     public void Get(ref PersonInfo item, int id)
     {
-        throw new NotImplementedException();
+        this.sqlConnection.Open();
+        
+        this.sqlCommand.CommandText = "SELECT PersonID, FirstName, LastName FROM tblPerson WHERE id=@id";
+        this.sqlCommand.Parameters.AddWithValue("@id", id);
+
+        this.sqlConnection.Close();
     }
 
     public void Update(PersonInfo item, int id)
     {
-        throw new NotImplementedException();
+        this.sqlConnection.Open();
+
+        this.sqlCommand.CommandText = "UPDATE tblPerson SET FirstName = @firstName AND LastName = @lastName WHERE id= @id";
+        this.sqlCommand.Parameters.AddWithValue("@firstName", item.FirstName);
+        this.sqlCommand.Parameters.AddWithValue("@lastName", item.LastName);
+        this.sqlCommand.Parameters.AddWithValue("@id", item.PersonID);
+        this.sqlCommand.ExecuteNonQuery();
+        
+        this.sqlConnection.Close();
     }
 
     public void Delete(int id)
     {
-        throw new NotImplementedException();
+        this.sqlConnection.Open();
+        
+        this.sqlCommand.CommandText = "DELETE FROM tblPerson WHERE PersonID=@id";
+        this.sqlCommand.Parameters.AddWithValue("@id", id);
+        this.sqlCommand.ExecuteNonQuery();
+        
+        this.sqlConnection.Close();
     }
 
     

@@ -26,10 +26,12 @@ public partial class _Default : System.Web.UI.Page
         //Get data from person table and place it into personInfo by reference
         person.Get(ref personInfoList);
 
+        Label2.Text = String.Empty; //Clear text
+
         //Display details of person by looping through list
         foreach (PersonInfo personInfo in personInfoList)
         {
-            Label1.Text += personInfo.FirstName + " " + personInfo.LastName + "<br/>\n";
+            Label2.Text += personInfo.FirstName + " " + personInfo.LastName + " <a href=\"Delete.aspx?id=" +  personInfo.PersonID + "\">Delete</a><br/>\n";
         }
 
     }
