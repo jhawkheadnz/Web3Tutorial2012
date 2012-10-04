@@ -39,6 +39,10 @@ public partial class _Default : System.Web.UI.Page
         //Create a Person info object
         PersonInfo personInfo = new PersonInfo();
 
+        personInfo.FirstName = tbxFirstName.Text;
+        personInfo.LastName = tbxLastName.Text;
+
+        person.Add(personInfo);
 
     }
 }
