@@ -10,9 +10,9 @@ using System.Web;
 /// </summary>
 public interface IEntity<T>
 {
-    public void Add(T item);
-    public void Get(ref List<T> item);
-    public void Get(ref T item, int id);
-    public void Update(T item, int id);
-    public void Delete(int id);
+    void Add(T item);
+    void Get(ref List<T> item);
+    void Get(ref T item, int id);
+    void Update(T item, int id);
+    void Delete(int id);
 }
