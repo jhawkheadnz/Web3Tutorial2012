@@ -20,10 +20,6 @@
             <asp:Button ID="Button1" runat="server" Text="Add Person" 
                 onclick="Button1_Click" />
             <br />
-            <br />
-            <strong><asp:Label ID="Label1" runat="server" 
-                Text="List of people in the database:&lt;br/&gt;"></asp:Label></strong>
-            <asp:Label ID="Label2" runat="server"></asp:Label>
         </div>
     </form>
 </body>

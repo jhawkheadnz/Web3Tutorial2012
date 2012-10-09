@@ -11,6 +11,9 @@ public partial class Delete : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        //TODO: Change querystring to posted value for security
+
         Person person;
         SqlConnection sqlConnection;
 
@@ -24,7 +27,10 @@ public partial class Delete : System.Web.UI.Page
             int id = int.Parse(Request.QueryString["id"].ToString());
             person.Delete(id);
 
-            Response.Redirect("Delete.aspx");
+            Response.Redirect("Edit.aspx");
         }
+
+        //if file is accessed directly redirect
+        Response.Redirect("Edit.aspx");
     }
 }

@@ -13,7 +13,6 @@
                 listing all the people in the database with options to edit and 
                 delete people from the database.
             -->
-
             <asp:Label ID="lblUsers" runat="server" Text="Label"></asp:Label>
         </div>
     </form>
