@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <title></title>
+    <title>Delete Record</title>
+    <link rel="Stylesheet" href="css/StyleSheet.css" type="text/css" />
 </head>
 <body>
 

@@ -4,10 +4,8 @@
 
 <html>
 <head runat="server">
-    <title></title>
-    <style type="text/css">
-        body { font-family: Arial; font-size:12px; }
-    </style>
+    <title>Main Page</title>
+    <link rel="Stylesheet" href="css/StyleSheet.css" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
