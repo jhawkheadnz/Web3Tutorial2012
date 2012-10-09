@@ -3,3 +3,17 @@
     font-family: Arial; 
     font-size:12px; 
 }
+
+#nav
+{
+    width:100%;
+    height: 30px;
+    background-color:Teal;
+    padding-left:10px;
+}
+
+#nav p
+{
+    padding-top:8px;
+    font-size:18px;
+}
