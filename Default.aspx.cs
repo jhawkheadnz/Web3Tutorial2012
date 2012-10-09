@@ -20,21 +20,6 @@ public partial class _Default : System.Web.UI.Page
         //Create instance of person
         person = new Person(sqlConnection);
 
-        //Load a list of people from the person table
-        List<PersonInfo> personInfoList = new List<PersonInfo>();
-
-        //Get data from person table and place it into personInfo by reference
-        //http://msdn.microsoft.com/en-us/library/14akc2c7%28v=vs.71%29.aspx
-        person.Get(ref personInfoList);
-
-        Label2.Text = String.Empty; //Clear text
-
-        //Display details of person by looping through list
-        foreach (PersonInfo personInfo in personInfoList)
-        {
-            Label2.Text += personInfo.FirstName + " " + personInfo.LastName + " <a href=\"Delete.aspx?id=" +  personInfo.PersonID + "\">Delete</a><br/>\n";
-        }
-
     }
 
     protected void Button1_Click(object sender, EventArgs e)
@@ -46,6 +31,8 @@ public partial class _Default : System.Web.UI.Page
         personInfo.LastName = tbxLastName.Text;
 
         person.Add(personInfo);
+
+        Response.Redirect("Edit.aspx");
 
     }
 }

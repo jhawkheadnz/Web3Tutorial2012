@@ -16,10 +16,19 @@
                 the logic layer and display the data that we want to output from the
                 database.
             -->
+<<<<<<< HEAD
             <p>First name: <asp:TextBox ID="tbxFirstName" runat="server"></asp:TextBox></p>
             <p>Last name: <asp:TextBox ID="tbxLastName" runat="server"></asp:TextBox></p>
             <p><asp:Button ID="Button1" runat="server" Text="Add Person" onclick="Button1_Click" /></p>
             
+=======
+            First name: <asp:TextBox ID="tbxFirstName" runat="server"></asp:TextBox><br />
+            Last name: <asp:TextBox ID="tbxLastName" runat="server"></asp:TextBox><br />
+            <asp:Button ID="Button1" runat="server" Text="Add Person" 
+                onclick="Button1_Click" />
+            <br />
+        </div>
+>>>>>>> 0e2c3ba7a41805a840ade3fceb445ac76148d524
     </form>
     </div>
 </body>
