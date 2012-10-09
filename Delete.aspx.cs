@@ -24,7 +24,7 @@ public partial class Delete : System.Web.UI.Page
             int id = int.Parse(Request.QueryString["id"].ToString());
             person.Delete(id);
 
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Delete.aspx");
         }
     }
 }
