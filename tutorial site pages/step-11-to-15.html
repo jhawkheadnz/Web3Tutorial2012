@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Step 11 to 15 | Web 3 Tutorial - 3-Tier architecture</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    
+    <body>
+        <div id="container">
+            <header>
+            	<h1>Web 3 Tutorial - Creating a Webpage using a Three-Tier architecture in ASP.NET C#</h1>
+                
+                <h2>By Josh Hawkhead and Rob Attfield</h2>
+            </header>
+            <nav>
+                <ul>
+                	<li><a href="index.html">Intro</a></li>
+                    <li><a href="step-1-to-5.html">Step 1 to 5</a></li>
+                    <li><a href="step-6-to-10.html">Step 6 to 10</a></li>
+                    <li>Step 11 to 15</li>
+                </ul>
+            </nav>
+            <article>
+            	
+                <ol start="11">
+                    <li>Create a new main page (Default.aspx) Web Form file
+					<br/><img src="images/tutorialImage8.jpg" /></li>
+					
+                    <li>Add an object to your form to store the data in, in this example we are using a Label
+					<br/><img src="images/tutorialImage10.jpg" /></li>
+					
+                    <li>When page loads create person object and get data from the database by reference
+					br creating a List<PersonInfo> object then using person.Get(ref people);
+					<pre>
+SqlConnection connection = new SqlConnection
+(ConfigurationManager.ConnectionStrings["BitDevConnection"].ConnectionString);
+Person person;
+
+protected void Page_Load(object sender, EventArgs e)
+{
+    //Create person and pass in connection
+    person = new Person(connection);
+    
+    //Create a list object that will store information about all the people from the database
+    List<PersonInfo> people = new List<PersonInfo>();
+    
+    //Get people information by reference
+    person.Get(ref people);
+    
+    //Clear label
+    lblPeople.Text = String.Empty; 
+    
+    //Display results
+    foreach (PersonInfo p in people)
+    {
+    	lblPeople.Text += String.Format("{0} {1}", p.FirstName, p.LastName);
+    }
+}</pre>
+					<br/><img src="images/tutorialImage12.jpg" /></li>
+                    <li>Run the application, a list of people from the database should show
+                </ol>
+                
+                <p>We hope you have enjoyed the tutorial, and learning how three-tier architecture works. The more you get to know three-tier architecture, the more complex implementations you will be able to build. This was just a basic introduction, and we hope that this tutorial has made you more curious to explore three-tier architecture in more depth.</p>
+
+            
+            </article>
+            <footer><p>Web Tutorial created by Josh Hawkhead and Rob Attfield.</p></footer>
+        </div>
+    </body>
+</html>

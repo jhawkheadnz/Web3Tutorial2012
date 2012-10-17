@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	width:1000px;
+	min-width:800px;
+	background-color:#999;
+	margin: 0 auto;
+}
+
+#container{
+	width:100%;
+	min-width:800px;
+	margin-left:auto;
+	margin-right:auto;
+	
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+}
+
+header{
+	width:980px;
+	min-width:800px;
+	height:160px;
+	background-color:#333;
+	position:relative;
+	padding:10px;
+}
+
+header h1, header h2{
+	margin-top:0px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color:#CCC;
+}
+
+header h2{
+	font-size:18px;
+}
+
+nav{
+	width:100%;
+	min-width:800px;
+	height:49px;
+	background-color:#666;
+	position:relative;
+	padding-top:1px;
+	
+}
+
+nav ul{
+	width:950px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:white;
+	border-radius:5px 5px 5px 5px;
+	font-size:16px;
+	padding-top:0px;
+	padding-bottom:0px;
+	margin-top:12px;
+}
+
+nav ul li
+{
+display: inline;
+list-style-type: none;
+padding-right: 20px;
+font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+nav ul li a{
+	text-decoration:none;
+	color:black;
+}
+
+nav ul li a:hover{
+	background-color:#666;
+	color:white;
+	
+}
+
+article{
+	width:980px;
+	min-width:800px;
+	height:100%;
+	background-color:#9F9;
+	position:relative;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding:10px;
+}
+
+article ul{
+	list-style-type:square;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+pre {
+	background: #fff;
+	padding:10px;
+}
+
+footer{
+	width:100%;
+	min-width:800px;
+	height:20px;
+	background-color:#666;
+	position:relative;
+}
+
+footer p{
+	margin-top:0px;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	padding-left:10px;
+}
